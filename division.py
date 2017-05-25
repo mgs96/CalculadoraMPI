@@ -1,6 +1,7 @@
 #Divide un numero enorme entre un entero
 import numpy
 from mpi4py import MPI
+from decimal import *
 
 import sys
 
@@ -9,8 +10,8 @@ comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
 size = comm.Get_size()
 
-n = float(sys.argv[1])/(size - 1)
-n1 = float(sys.argv[2])
+n = Decimal(sys.argv[1])/(size - 1)
+n1 = Decimal(sys.argv[2])
 
 
 if (rank != 0):
